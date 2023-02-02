@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220812 23:16:49.870" rpa="false" schemaversion="3">
+<suite id="s1" name="AmazonLogin" source="C:\Users\viptiwar\PycharmProjects\AmazonAutomation1\LoginPage\AmazonLogin.robot">
+<test id="s1-t1" name="Navigate to login Page" line="15">
+<kw name="Launch Browser" library="CommonKeywords" type="SETUP">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220812 23:16:50.312" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.in/'.</msg>
+<status status="PASS" starttime="20220812 23:16:50.311" endtime="20220812 23:16:57.322"/>
+</kw>
+<status status="PASS" starttime="20220812 23:16:50.311" endtime="20220812 23:16:57.322"/>
+</kw>
+<kw name="Validate Page Titles" library="HomePage">
+<doc>Validates page titles after navigating to a page</doc>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Actual_Page_Title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220812 23:16:57.444" level="INFO">${Actual_Page_Title} = Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in</msg>
+<status status="PASS" starttime="20220812 23:16:57.324" endtime="20220812 23:16:57.444"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Actual_Page_Title}</arg>
+<arg>${Expected_Page_Title_Home}</arg>
+<arg>successfull navigating to ${Expected_Page_Title_Home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220812 23:16:57.445" endtime="20220812 23:16:57.446"/>
+</kw>
+<status status="PASS" starttime="20220812 23:16:57.323" endtime="20220812 23:16:57.446"/>
+</kw>
+<kw name="Login To Amazon ${UserID} and ${Password}" library="LoginPage" sourcename="Login To Amazon ${UserID} and ${Password}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_page}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220812 23:16:57.456" level="INFO">Clicking element '//*[@id="nav-link-accountList"]'.</msg>
+<status status="PASS" starttime="20220812 23:16:57.456" endtime="20220812 23:16:59.115"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EmailD}</arg>
+<arg>${UserID}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220812 23:16:59.116" level="INFO">Typing text '9420287689' into text field '//*[@id="ap_email"]'.</msg>
+<status status="PASS" starttime="20220812 23:16:59.115" endtime="20220812 23:16:59.397"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Continue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220812 23:16:59.398" level="INFO">Clicking element 'continue'.</msg>
+<status status="PASS" starttime="20220812 23:16:59.397" endtime="20220812 23:17:00.481"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220812 23:17:00.483" level="INFO">Typing text 'NahiPata@321' into text field 'password'.</msg>
+<status status="PASS" starttime="20220812 23:17:00.482" endtime="20220812 23:17:00.666"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signInSubmit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220812 23:17:00.667" level="INFO">Clicking element 'signInSubmit'.</msg>
+<status status="PASS" starttime="20220812 23:17:00.666" endtime="20220812 23:17:00.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>50</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220812 23:17:50.800" level="INFO">Slept 50 seconds</msg>
+<status status="PASS" starttime="20220812 23:17:00.790" endtime="20220812 23:17:50.801"/>
+</kw>
+<status status="PASS" starttime="20220812 23:16:57.455" endtime="20220812 23:17:50.801"/>
+</kw>
+<kw name="Validate Page Titles" library="HomePage">
+<doc>Validates page titles after navigating to a page</doc>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Actual_Page_Title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220812 23:17:50.832" level="INFO">${Actual_Page_Title} = Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in</msg>
+<status status="PASS" starttime="20220812 23:17:50.803" endtime="20220812 23:17:50.833"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Actual_Page_Title}</arg>
+<arg>${Expected_Page_Title_Home}</arg>
+<arg>successfull navigating to ${Expected_Page_Title_Home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220812 23:17:50.833" endtime="20220812 23:17:50.835"/>
+</kw>
+<status status="PASS" starttime="20220812 23:17:50.802" endtime="20220812 23:17:50.836"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220812 23:17:50.837" endtime="20220812 23:17:54.547"/>
+</kw>
+<status status="PASS" starttime="20220812 23:16:50.310" endtime="20220812 23:17:54.549"/>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20220812 23:16:49.875" endtime="20220812 23:17:54.556"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="AmazonLogin">AmazonLogin</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220812 23:16:50.298" level="ERROR">Error in file 'C:\Users\viptiwar\PycharmProjects\AmazonAutomation1\Resources\CommonKeywords.robot' on line 3: Importing library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310
+  C:\Users\viptiwar\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+</errors>
+</robot>
