@@ -1,4 +1,3 @@
-# AmazonAutomation
 1. The Project contains code for Amazon automation
 2. it is written in Robot Framework, have used Selenium2library, Seleniumlibrary, BuiltIn.
 
